@@ -1,0 +1,13 @@
+outputs
+envs
+variants_without_merging
+venv
+slurm-outputs
+slurm_outputs
+cutadapt
+dag.svg
+test_data
+.ipynb_checkpoints
+.snakemake
+.empty
+scripts

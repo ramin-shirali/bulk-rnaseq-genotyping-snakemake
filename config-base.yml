@@ -1,0 +1,1504 @@
+# Base configuration file for a Hamlet run.
+#
+# This file contains the required configuration values for a Hamlet run. You must define the values before using
+# this file in any Hamlet runs.
+
+settings:
+
+  # Name of the run; if not supplied will be set to 'hamlet-{8_random_chars}'
+  #run_name:
+
+  # Path to a human genome FASTA file.
+  #genome_fasta:
+
+  # Path to a STAR-Fusion lib directory.
+  #genome_star_fusion_lib:
+
+  # BED file containing the transcripts.
+  # This is used for fusion gene detection. Each BED entry represents a transcript end-to-end (including its introns).
+  #transcripts_bed:
+
+  # refFlat file of the transcriptome -- used for run metrics gathering.
+  #annotation_refflat:
+
+  # refFlat for rRNA -- used for run metrics gathering.
+  #rrna_refflat:
+
+  # GTF file of the transcriptome.
+  #gtf:
+
+  # Name of the exons whose base counts will be gathered by the pipeline.
+  #exon_names: []
+
+  # Minimum ratio for base count comparison against divisor gene.
+  #exon_min_ratio: 0.1
+
+  # Divisor gene.
+  #relative_gene_name: HMBS
+
+  # Path to the FASTA file containing the FLT3 transcript sequence.
+  # This may contain more than one transcripts (up to the entire transcriptome).
+  #flt3_fasta:
+
+  # Path to a BWA index containing the FLT3 transcript sequence.
+  # This must be generated from the `flt3_fasta` file.
+  #flt3_bwa_index:
+
+  # Name of the FLT3 transcript in `flt3_fasta`.
+  #flt3_name:
+
+  # Start and end coordinates (1-based, fully closed) of the region in the FLT3 transcript for ITD detection.
+  #flt3_start:
+  #flt3_end:
+
+  # Path to the FASTA file containing the KMT2A transcript sequence.
+  # This may contain more than one transcripts (up to the entire transcriptome).
+  #kmt2a_fasta:
+
+  # Path to a BWA index containing the KMT2A transcript sequence.
+  # This must be generated from the `kmt2a_fasta` file.
+  #kmt2a_bwa_index:
+
+  # Name of the KMT2A transcript in `kmt2a_fasta`.
+  #kmt2a_name:
+
+  # Start and end coordinates (1-based, fully closed) of the region in the KMT2A transcript for ITD detection.
+  # kmt2a_start: 456
+  # kmt2a_end: 4719
+
+  # STAR aligner index of the genome.
+  #genome_star_index:
+
+  # Path to GSNAP executable, required to reproduce paper results
+  #gsnap_exe:
+  #genome_gmap_index:
+
+  # bgzip executable
+  #bgzip_exe:
+
+  # VEP executable
+  #vep_exe:
+
+  # VEP cache directory.
+  #cache_vep:
+
+  # 1000 Genomes Project Phase 3 VCF file.
+  #vcf_1kg:
+
+  # GoNL VCF file.
+  #vcf_gonl:
+
+  # BED file containing hotspots region of the genes of interest.
+  #bed_variant_hotspots:
+
+  # Tab-delimited file of mapping between three values of a given gene:
+  #ref_id_mapping:
+
+# The entries here must have the following structure:
+# <sample_name>:
+#   read_groups:
+#     <read_group_name>:
+#         R1: <absolute_path_to_first_pair_gzipped_fastq>
+#         R2: <absolute_path_to_first_pair_gzipped_fastq>
+102581-002-052:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-001:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-034:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-037:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-07:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-011:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-023:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-044:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-051:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-012:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-001:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-040:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-041:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-025:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-006:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-015:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-002:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-005:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-046:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-033:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-03:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-022:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-032:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-039:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-024:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-018:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-048:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-035:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-027:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-008:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-007:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-06:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-029:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-020:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-005:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-008:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-027:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-019:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-016:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-016:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-003:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-028:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-05:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-021:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-040:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-031:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-013:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-014:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-004:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-011:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-045:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-029:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-01:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-025:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-007:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-026:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-014:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-035:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-028:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-038:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-054:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-041:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-003:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-08:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-002:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-009:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-020:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-030:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-049:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-017:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-012:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-010:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-047:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-019:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-022:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-034:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-015:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-043:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-036:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-04:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-039:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-013:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-050:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-038:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-004:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-030:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-031:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-023:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-024:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-053:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-033:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-006:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-S04:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-037:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-010:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-009:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-018:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-02:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-002-021:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+102581-003-032:
+    read_groups:
+        L001:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C71AEANXX_102581-002-007_ACTTGA_L001_R2.fastq.gz
+        L007:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L007_R2.fastq.gz
+        L008:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C6UC4ANXX_102581-002-007_ACTTGA_L008_R2.fastq.gz
+        L006:
+            R1: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R1.fastq.gz
+            R2: /exports/archive/me-lcco-aml-archive/Arindrarto2020/rawdata/C7153ANXX_102581-002-007_ACTTGA_L006_R2.fastq.gz
+#samples: {}
+#
